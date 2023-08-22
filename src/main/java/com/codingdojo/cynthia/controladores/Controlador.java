@@ -82,7 +82,14 @@ public class Controlador {
 		SimpleDateFormat formato = new SimpleDateFormat("MMMM d Y h:mm");
 		String fechaFormateada = formato.format(fecha);
 		
-		String mensaje = "Entraste a: "+lugar+" y obtuviste "+random+" monedas. "+fechaFormateada;
+		String mensaje = "";
+		if(random < 0) {
+			mensaje = "Entraste a: "+lugar+" y perdiste "+random+" monedas. "+fechaFormateada;
+		} else {
+			mensaje = "Entraste a: "+lugar+" y ganaste "+random+" monedas. "+fechaFormateada;
+		}
+		
+		//String mensaje = "Entraste a: "+lugar+" y obtuviste "+random+" monedas. "+fechaFormateada;
 		actividades.add(mensaje);
 		session.setAttribute("actividades", actividades);
 		

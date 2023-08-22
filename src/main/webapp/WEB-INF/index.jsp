@@ -47,10 +47,23 @@
 		</div>
 		<div class="row">
 			<h2>Actividades</h2>
-			<p>Entraste a la granja y ganaste 10 monedas. (Fecha)</p>
-			<p>Entraste a la granja y ganaste 10 monedas. (Fecha)</p>
-			<p>Entraste a la granja y ganaste 10 monedas. (Fecha)</p>
-			<p>Entraste a la granja y ganaste 10 monedas. (Fecha)</p>
+			
+			<div class="card">
+				<div class="card-body">
+					<c:forEach items="${actividades}" var="actividad">
+						
+						<c:if test="${actividad.contains('ganaste')}">
+							<p class="text-success">${actividad}</p>
+						</c:if>
+						
+						<c:if test="${actividad.contains('perdiste')}">
+							<p class="text-danger">${actividad}</p>
+						</c:if>
+						
+						
+					</c:forEach>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
